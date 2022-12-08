@@ -1,0 +1,8 @@
+input:invalid ~ span {
+    display: block;
+}
+
+ span {
+    display: none;
+    color: green
+}
