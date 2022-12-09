@@ -1,17 +1,24 @@
 
+import { useState } from "react"
 import "./input.css"
-const FormInput = ({label, errorMessage, onChange, ...inputProps}) => {
+const FormInput = ({label, errorMessage, onChange ,...inputProps}) => {
+  const [focused, setFocused] = useState(false)
 
+/*   const handleFocused = () => {
+    setFocused(true)
+  } */
 
   return (
-    <div className="flex flex-col w-[280px]">
-    <label  className=" text-slate-500 "> {label}</label>
-      <input className=" w-full border border-gray-500 py-3 pr-10 pl-3 p outline-none rounded my-1 placeholder:text-left invalid:border-red-500"
+    <div className="flex flex-col w-80">
+    {/* <label  className=" text-slate-500 "> {label}</label> */}
+      <input className=" w-full border-b border-gray-300 py-3 pr-10 pl-3 p outline-none  text-[15px] my-1  placeholder:text-sm  font-medium" //
         {...inputProps}
         onChange={onChange}
-        
+        // onBlur={handleFocused} 
+        // focused={focused.toString()}
+         title={inputProps.type == 'date' ? 'Data de Nascimento': '' }
       />
-      <span className="hidden text-[13px] text-red-500 ">{errorMessage}</span>
+      <span className="hidden text-sm text-[#d72923]  font-semibold ">{errorMessage}</span>
     </div>
   );
 }

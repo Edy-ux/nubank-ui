@@ -1,4 +1,29 @@
-input:invalid ~ span {
+/* input:invalid[focused="true"] ~ span {
     display: block;
+} */
+input:not(:focus):not(:placeholder-shown):invalid ~ span {
+  display: block;
+}
+/* input:invalid[focused="true"] {
+   border-bottom: 1px solid red;
+}   
+ */
+input:not(:focus):not(:placeholder-shown):invalid {
+  border-bottom: 1px solid red;
+}
+
+input[type='date'] {
+  border-bottom: 1px solid #ddd !important;
+}
+section  {
+  margin:0;
+  position: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-image: url('https://nubank.com.br/images-cms/1650479239-woman-holding-card-smiling-2-lg-3x.jpg?w=1152&dpr=1&auto=compress&fm=webp') ;
 }
 

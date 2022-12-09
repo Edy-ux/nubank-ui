@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import './App.css'
+import './input.css'
 import FormInput from './FormInput'
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     email: '',
     birthday: '',
     password: '',
-   
+
     confirmPassword: ''
   })
   const inputs = [
@@ -17,36 +17,38 @@ function App() {
       id: 1,
       name: "username",
       type: "text",
-      errorMessage: "Nome deve ter entre 3-20 caracteres, e não deve incluir qualquer caracter especial!",
-      placeholder: "Nome",
-      pattern: '^[A-Za-z0-9]{3,20}$',
-      required: true
-
+      errorMessage: "Nome deve ter entre 3-20 caracteres, não deve incluir numéros ou qualquer caracter especial!",
+      placeholder: "Digite seu nome",
+      pattern: '^[A-Za-z ]{3,30}$',
+      // required: true,
     },
 
     {
       id: 2,
       name: "email",
       type: "email",
-      errorMessage: "Por favor, introduza o seu e-mail",
-      placeholder: "Email",
-      required: true
+      errorMessage: "Por favor, insira um e-mail válido!",
+      placeholder: "Digite seu email  ",
+      required: true,
+
     },
     {
       id: 3,
       name: "birthday",
       type: "date",
       placeholder: "Date",
+      required: true,
 
     },
     {
       id: 4,
       name: "password",
       type: "password",
-      errorMessage: "Sua senha deve conter pelo menos uma letra maiúscula, uma letra miúscula, um número e um caracter especial '#@%^_'",
+      errorMessage: "Sua senha deve conter pelo menos 8 caracteres, uma letra maiúscula, uma minúscula, um número e um caracter especial '#@%^_'",
       placeholder: "Senha",
-      pattern: '^([A-Z][a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$',
-      required: true
+      pattern: '^([A-Z][a-z])(?=.*?[0-9])(?=.*?[#?!@$_%^&*-]).{8,}$',
+      required: true,
+
 
     },
     {
@@ -56,7 +58,7 @@ function App() {
       errorMessage: "Senhas não correspondem",
       placeholder: "Confirme a senha",
       pattern: values.password,
-      required: true
+      required: true,
 
     },
   ]
@@ -68,25 +70,32 @@ function App() {
   }
   const onChange = (e) => {
     const { name, value } = e.target
+
     setValues((prevValue) => Object.assign({}, prevValue, { [name]: value }))
   }
- 
+
+
   return (
-    <div className="flex justify-center flex-col items-center h-screen" >
-      <div className="border border-gray-200 px-20 py-4 rounded">
-        <h1 className="text-3xl  text-center font-bold mb-2">Inscrever-se</h1>
-        <form onSubmit={handleSubmit}>
-          {inputs.map(input => (
-            <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange} label={input.placeholder} />
-          ))}
-          <div className="text-center">
-            <button className="w-full bg-purple-900 text-white text-[18px] font-semibold py-3 mt-1 rounded">Enviar</button>
-          </div>
+    <section className="bg-cover ">
+      <div className="flex justify-between items-center relative w-auto h-screen  p-10 bg-transparent space-y-2">
 
-        </form>
+        <h1 className="text-white text-5xl font-semibold w-96 mb-2">Cartão de crédito com anuidade zero. Conta digital prática e sem custos.</h1>
+
+        <div className="px-8 py-8 rounded-2xl bg-white w-96">
+          <p className="text-3xl font-medium">Com o Nubank, a resposta vem em menos de 1 minuto</p>
+          <form onSubmit={handleSubmit}>
+            {inputs.map(input => (
+              <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange} label={input.placeholder}
+
+              />
+            ))}
+            <div className="text-center">
+              <button className="w-full bg-[#9d02d9] text-white text-[18px]  py-3 my-3 rounded-3xl ">Enviar</button>
+            </div>
+          </form>
+        </div>
       </div>
-
-    </div>
+    </section>
   )
 }
 
