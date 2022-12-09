@@ -7,12 +7,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        sans:["Graphik, Inter var, sans-serif"]
+        sans:["Graphik-Medium, Inter var, sans-serif"]
       },
-     /*  backgroundImage: {
-        'section': "url('https://nubank.com.br/images-cms/1650479239-woman-holding-card-smiling-2-lg-3x.jpg?w=1152&dpr=1&auto=compress&fm=webp')",
+      backgroundImage: {
+        "section": "url('https://nubank.com.br/images-cms/1650479239-woman-holding-card-smiling-2-lg-3x.jpg?w=1152&dpr=1&auto=compress&fm=webp')",
         
-      } */
+      }
      
     },
   },

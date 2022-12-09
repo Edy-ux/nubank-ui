@@ -19,7 +19,7 @@ function App() {
       type: "text",
       errorMessage: "Nome deve ter entre 3-20 caracteres, não deve incluir numéros ou qualquer caracter especial!",
       placeholder: "Digite seu nome",
-      pattern: '^[A-Za-z ]{3,30}$',
+      pattern: '^[A-Za-z ]{4,30}$',
       // required: true,
     },
 
@@ -76,12 +76,11 @@ function App() {
 
 
   return (
-    <section className="bg-cover ">
-      <div className="flex justify-between items-center relative w-auto h-screen  p-10 bg-transparent space-y-2">
-
+    <section className="flex  bg-cover bg-fixed justify-between items-center  w-auto h-screen p-10 ">
+     
         <h1 className="text-white text-5xl font-semibold w-96 mb-2">Cartão de crédito com anuidade zero. Conta digital prática e sem custos.</h1>
 
-        <div className="px-8 py-8 rounded-2xl bg-white w-96">
+        <div className="px-8 py-8 rounded-2xl bg-white w-96 ">
           <p className="text-3xl font-medium">Com o Nubank, a resposta vem em menos de 1 minuto</p>
           <form onSubmit={handleSubmit}>
             {inputs.map(input => (
@@ -94,7 +93,7 @@ function App() {
             </div>
           </form>
         </div>
-      </div>
+    
     </section>
   )
 }
