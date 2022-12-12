@@ -76,11 +76,10 @@ function App() {
 
 
   return (
-    <section className="flex  bg-cover bg-fixed justify-between items-center  w-auto h-screen p-10 ">
-     
-        <h1 className="text-white text-5xl font-semibold w-96 mb-2">Cartão de crédito com anuidade zero. Conta digital prática e sem custos.</h1>
-
-        <div className="px-8 py-8 rounded-2xl bg-white w-96 ">
+    <div className="bg-body h-screen bg-auto md:bg-cover  bg-no-repeat w-screen bg-left">
+      <div className="flex justify-between items-center flex-col md:flex-row m-auto p-10 h-screen">
+        <h1 className="text-white font-semibold w-96 mb-2 text-3xl md:text-5xl">Cartão de crédito com anuidade zero. Conta digital prática e sem custos.</h1>
+        <div className="px-8 py-8  rounded-2xl bg-white w-96  h-50%">
           <p className="text-3xl font-medium">Com o Nubank, a resposta vem em menos de 1 minuto</p>
           <form onSubmit={handleSubmit}>
             {inputs.map(input => (
@@ -89,12 +88,13 @@ function App() {
               />
             ))}
             <div className="text-center">
-              <button className="w-full bg-[#9d02d9] text-white text-[18px]  py-3 my-3 rounded-3xl ">Enviar</button>
+              <button disabled className="w-full  bg-[#9d02d9] text-white text-[18px]  py-3 my-3 rounded-3xl ">Enviar</button>
             </div>
           </form>
         </div>
-    
-    </section>
+
+      </div>
+    </div>
   )
 }
 
