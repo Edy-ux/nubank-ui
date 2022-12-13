@@ -15,3 +15,7 @@ input:not(:focus):not(:placeholder-shown):invalid {
 input[type='date'] {
   border-bottom: 1px solid #ddd !important;
 }
+
+bottom:not(:disabled) {
+  background-color: red;
+}
