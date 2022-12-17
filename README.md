@@ -1,5 +1,6 @@
-# nubank-ui
-Clone UI Nubank -  React and  tailwind css.
+## nubank-ui
 
-**Doploy**
+> Clone da UI Nubank -  React and  tailwind css.
+
+> Deploy
 https://nubank-ui-ednei.netlify.app/
